@@ -50,7 +50,7 @@ pip install galvani
 The latest development version can be installed with `pip` directly from GitHub (see note about git-lfs below):
 
 ```shell
-GIT_LFS_SKIP_SMUDGE=1 pip install git+https://github.com/echemdata/galvani
+GIT_LFS_SKIP_SMUDGE=1 pip install git+https://codeberg.org/echemdata/galvani
 ```
 
 ## Development installation and contributing 
@@ -64,7 +64,7 @@ GIT_LFS_SKIP_SMUDGE=1 pip install git+https://github.com/echemdata/galvani
 > cloning. 
 > The full test data from the last release can always be obtained by
 > downloading the GitHub release archives (tar or zip), at
-> https://github.com/echemdata/galvani/releases/latest
+> https://codeberg.org/echemdata/galvani/releases/latest
 >
 > If you wish to add test files, please ensure they are as small as possible,
 > and take care that your tests work locally without the need for the LFS files.
@@ -74,9 +74,9 @@ GIT_LFS_SKIP_SMUDGE=1 pip install git+https://github.com/echemdata/galvani
 If you wish to contribute to galvani, please clone the repository and install the testing dependencies:
 
 ```shell
-git clone git@github.com:echemdata/galvani
+git clone git@codeberg.org:echemdata/galvani
 cd galvani
 pip install -e .\[tests\]
 ```
 
-Code can be contributed back via [GitHub pull requests](https://github.com/echemdata/galvani/pulls) and new features or bugs can be discussed in the [issue tracker](https://github.com/echemdata/galvani/issues).
+Code can be contributed back via [pull requests](https://codeberg.org/echemdata/galvani/pulls) and new features or bugs can be discussed in the [issue tracker](https://codeberg.org/echemdata/galvani/issues).
