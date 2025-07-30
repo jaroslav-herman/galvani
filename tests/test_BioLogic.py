@@ -360,6 +360,7 @@ def test_MPR_matches_MPT_v1150(testdata_dir, basename_v1150):
     assert_MPR_matches_MPT_v2(mpr, mpt, comments)
 
 
+@pytest.mark.skip(reason="Test data file is missing")
 def test_loop_from_file(testdata_dir):
     """Check if the loop_index is correctly extracted from the _LOOP.txt file
     """
@@ -369,6 +370,7 @@ def test_loop_from_file(testdata_dir):
     assert_array_equal(mpr.loop_index, [0, 4, 8, 11], "loop_index values are wrong")
 
 
+@pytest.mark.skip(reason="Test data file is missing")
 def test_timestamp_from_file(testdata_dir):
     """Check if the loop_index is correctly extracted from the _LOOP.txt file
     """
