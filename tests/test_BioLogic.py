@@ -364,19 +364,14 @@ def test_loop_from_file(testdata_dir):
     """Check if the loop_index is correctly extracted from the _LOOP.txt file
     """
     mpr = MPRfile(os.path.join(testdata_dir, "running", "running_OCV.mpr"))
-    if mpr.loop_index is None:
-        raise AssertionError("No loop_index found")
-    elif not len(mpr.loop_index) == 4:
-        raise AssertionError("loop_index is not the right size")
-    elif not (mpr.loop_index == [0, 4, 8, 11]).all():
-        raise AssertionError("loop_index values are wrong")
+    assert mpr.loop_index is not None, "No loop_index found"
+    assert len(mpr.loop_index) == 4, "loop_index is not the right size"
+    assert_array_equal(mpr.loop_index, [0, 4, 8, 11], "loop_index values are wrong")
 
 
 def test_timestamp_from_file(testdata_dir):
     """Check if the loop_index is correctly extracted from the _LOOP.txt file
     """
     mpr = MPRfile(os.path.join(testdata_dir, "running", "running_OCV.mpr"))
-    if not hasattr(mpr, "timestamp"):
-        raise AssertionError("No timestamp found")
-    elif not mpr.timestamp.timestamp() == 1707299985.908:
-        raise AssertionError("timestamp value is wrong")
+    assert hasattr(mpr, "timestamp"), "No timestamp found"
+    assert mpr.timestamp.timestamp() == pytest.approx(1707299985.908), "timestamp value is wrong"
