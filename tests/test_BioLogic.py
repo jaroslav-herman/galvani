@@ -81,6 +81,54 @@ def test_colID_map_uniqueness():
     assert not set(field_names).intersection(flag_names)
 
 
+def test_pdf_extracted_column_ids_present():
+    """Check that the PDF-extracted IDs are represented in the dtype map."""
+    expected = {
+        10: ("Aux/V", "<f4"),
+        12: ("log(|<I>/A|)", "<f4"),
+        22: ("log(|I/A|)", "<f4"),
+        25: ("DQ/mA.h", "<f8"),
+        41: ("Q discharge/mA.h", "<f8"),
+        42: ("Q charge (mA.h/g)", "<f8"),
+        43: ("Q discharge (mA.h/g)", "<f8"),
+        71: ("control/°C", "<f4"),
+        72: ("T/°C", "<f4"),
+        73: ("rotation rate/rpm", "<f4"),
+        76: ("<I>/mA", "<f4"),
+        77: ("<Ewe>/V", "<f4"),
+        79: ("E step/V", "<f4"),
+        83: ("I/A/cm2", "<f4"),
+        84: ("Q/C/cm2", "<f4"),
+        164: ("|Istack|/A", "<f4"),
+        167: ("Phase(I)/rad", "<f4"),
+        171: ("Conductivity/S.cm-1", "<f4"),
+        186: ("LD/deltaA", "<f4"),
+        190: ("T peltier/°C", "<f4"),
+        191: ("T cuvette/°C", "<f4"),
+        205: ("CH/mol.L-1", "<f4"),
+        208: ("shot number", "<f4"),
+        402: ("<E17>/V", "<f4"),
+        421: ("Phase2/deg", "<f4"),
+        427: ("<Istack>/mA", "<f4"),
+        460: ("<time>/s", "<f4"),
+        470: ("It/mA", "<f4"),
+        504: ("Rac/Ohm", "<f4"),
+        505: ("Rdc/Ohm", "<f4"),
+        511: ("Re(C)/nF", "<f4"),
+        512: ("Im(C)/nF", "<f4"),
+        513: ("|C|/nF", "<f4"),
+        514: ("Phase(C)/deg", "<f4"),
+        531: ("Tan(Delta)", "<f4"),
+        532: ("Loss Angle(Delta)/deg", "<f4"),
+        533: ("TCU base /°C", "<f4"),
+        534: ("TCU cell /°C", "<f4"),
+        535: ("TCU sample/°C", "<f4"),
+    }
+
+    for col_id, (name, dtype) in expected.items():
+        assert BioLogic.VMPdata_colID_dtype_map[col_id] == (name, np.dtype(dtype))
+
+
 @pytest.mark.parametrize(
     "colIDs, expected",
     [

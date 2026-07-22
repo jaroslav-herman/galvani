@@ -1,0 +1,541 @@
+
+1 mode
+2 ox/red
+3 error
+4 time/s
+5 control/V/mA
+6 Ewe/V
+7 dq/mA.h
+8 I/mA
+9 Ece/V
+10 Aux/V
+11 <I>/mA
+12 log(|<I>/A|)
+13 (Q-Qo)/mA.h
+14 x
+16 Analog IN 1/V
+17 Analog IN 2/V
+18 Analog IN 3/V
+19 control/V
+20 control/mA
+21 control changes
+22 log(|I/A|)
+23 dQ/mA.h
+24 cycle number
+25 DQ/mA.h
+26 Rapp/Ohm
+27 Ewe-Ece/V
+28 control/°C
+29 T/°C
+30 rotation rate/rpm
+31 Ns changes
+32 freq/Hz
+33 |Ewe|/V
+34 |I|/A
+35 Phase(Z)/deg
+36 |Z|/Ohm
+37 Re(Z)/Ohm
+38 -Im(Z)/Ohm
+39 I Range
+40 Q charge/mA.h
+41 Q discharge/mA.h
+42 Q charge (mA.h/g)
+43 Q discharge (mA.h/g)
+44 Q anodic/C
+45 Q cathodic/C
+46 Q anodic (C/cm²)
+47 Q cathodic (C/cm²)
+48 Tech Num
+49 End buf
+50 E0/V
+51 Ian min/mA
+52 Ian max/mA
+53 Ica min/mA
+54 Ica max/mA
+55 Ean end/V
+56 Eca end/V
+57 Ece min/V
+58 Ece max/V
+59 Analog IN 1/V min
+60 Analog IN 1/V max
+61 Analog IN 2/V min
+62 Analog IN 2/V max
+63 Analog IN 3/V min
+64 Analog IN 3/V max
+65 counter inc.
+66 I forward/mA
+67 I reverse/mA
+68 I delta/µA
+69 R/Ohm
+70 P/W
+71 control/°C
+72 T/°C
+73 rotation rate/rpm
+74 |Energy|/W.h
+75 Analog OUT/V
+76 <I>/mA
+77 <Ewe>/V
+78 Cs-2/µF-2
+79 E step/V
+80 Rp/Ohm
+81 Ecorr/V
+82 Icorr/mA
+83 I/A/cm2
+84 Q/C/cm2
+85 Aux
+86 Unk1
+87 Unk2
+88 Unk3
+89 Unk4
+90 Unk5
+91 Unk6
+92 Unk7
+93 Unk8
+94 Unk9
+95 Unk10
+96 |Ece|/V
+97 |Ice|/A
+98 Phase(Zce)/deg
+99 |Zce|/Ohm
+100 Re(Zce)/Ohm
+101 -Im(Zce)/Ohm
+102 Cce-2/µF-2
+103 Estack/V
+104 Istack/A
+105 |E21|/V
+106 Phase(Z21)/deg
+107 |E32|/V
+108 Phase(Z32)/deg
+109 |Z21|/Ohm
+110 Re(Z21)/Ohm
+111 -Im(Z21)/Ohm
+112 C21-2/µF-2
+113 |Z32|/Ohm
+114 Re(Z32)/Ohm
+115 -Im(Z32)/Ohm
+116 C32-2/µF-2
+117 E21/V
+118 E32/V
+119 Re(Y)/Ohm-1
+120 Im(Y)/Ohm-1
+121 |Y|/Ohm-1
+122 Phase(Y)/deg
+123 Energy charge/W.h
+124 Energy discharge/W.h
+125 Capacitance charge/µF
+126 Capacitance discharge/µF
+127 Delta(Phase(Z))/%
+128 Delta(|Z|)/%
+129 Delta(Re(Z))/%
+130 Delta(-Im(Z))/%
+131 Ns
+132 dI/dt/mA/s
+133 Delta(mass)/g
+134 Custom01
+135 Custom02
+136 Custom03
+137 Custom04
+138 Custom05
+139 Custom06
+140 Custom07
+141 Custom08
+142 Custom09
+143 Custom10
+144 Custom11
+145 Custom12
+146 Custom13
+147 Custom14
+148 Custom15
+149 Custom16
+150 Custom17
+151 Custom18
+152 Custom19
+153 Custom20
+154 Delta(Phase(Y))/%
+155 Delta(|Y|)/%
+156 Delta(Re(Y))/%
+157 Delta(-Im(Y))/%
+158 t low
+159 t high
+160 dt/dE/s/V
+161 Delta(Phase(Z))/deg
+162 Delta(Phase(Y))/deg
+163 |Estack|/V
+164 |Istack|/ABT-Lab and EC-Lab OLE COM User manual
+167 Phase(I)/rad
+168 Rcmp/Ohm
+169 Cs/µF
+170 sin ampl/V
+171 Conductivity/S.cm-1
+172 Cp/µF
+173 Cp-2/µF-2
+174 <Ewe>/V
+175 Efficiency/%
+176 Cycling rate charge
+177 Cycling rate discharge
+178 Wavelength/nm
+179 Fluorescence/V
+180 Fluorescence/%
+181 Transmittance/%
+182 CD/mdeg
+183 ORD/mdeg
+184 Aniso Vv/V
+185 Aniso Vh/V
+186 LD Vv/V
+187 LD Vh/V
+188 LD/deltaA
+189 Anisotropy/Aniso
+190 T peltier/°C
+191 T cuvette/°C
+192 Absorbance/AU
+193 HV/V
+194 Absorbance2/AU
+195 Absorbance/V
+196 If/mA
+197 Ic/mA
+198 CA/mol.L-1
+199 CB/mol.L-1
+200 CC/mol.L-1
+201 CD/mol.L-1
+202 CE/mol.L-1
+203 CF/mol.L-1
+204 CG/mol.L-1
+205 CH/mol.L-1
+206 CI/mol.L-1
+207 CJ/mol.L-1
+208 shot number
+209 pad number
+210 electrode number
+211 E1/V
+212 E2/V
+213 E3/V
+214 E4/V
+215 E5/V
+216 E6/V
+217 E7/V
+218 E8/V
+219 E9/V
+220 E10/V
+221 E11/V
+222 E12/V
+223 E13/V
+224 E14/V
+225 E15/V
+226 E16/V
+227 E17/V
+228 E18/V
+229 E19/V
+230 E20/V
+231 E21/V
+232 E22/V
+233 E23/V
+234 E24/V
+235 E25/V
+236 E26/V
+237 E27/V
+238 E28/V
+239 E29/V
+240 E30/V
+241 |E1|/V
+242 |E2|/V
+243 |E3|/V
+244 |E4|/V
+245 |E5|/V
+246 |E6|/V
+247 |E7|/V
+248 |E8|/V
+249 |E9|/V
+250 |E10|/V
+251 |E11|/V
+252 |E12|/V
+253 |E13|/V
+254 |E14|/V
+255 |E15|/V
+256 |E16|/V
+257 |E17|/V
+258 |E18|/V
+259 |E19|/V
+260 |E20|/V
+261 |E21|/V
+262 |E22|/V
+263 |E23|/V
+264 |E24|/V
+265 |E25|/V
+266 |E26|/V
+267 |E27|/V
+268 |E28|/V
+269 |E29|/V
+270 |E30|/V
+271 Phase(Z1)/deg
+272 Phase(Z2)/deg
+273 Phase(Z3)/deg
+274 Phase(Z4)/deg
+275 Phase(Z5)/deg
+276 Phase(Z6)/deg
+277 Phase(Z7)/deg
+278 Phase(Z8)/deg
+279 Phase(Z9)/deg
+280 Phase(Z10)/deg
+281 Phase(Z11)/deg
+282 Phase(Z12)/degBT
+283 Phase(Z13)/deg
+284 Phase(Z14)/deg
+285 Phase(Z15)/deg
+286 Phase(Z16)/deg
+287 Phase(Z17)/deg
+288 Phase(Z18)/deg
+289 Phase(Z19)/deg
+290 Phase(Z20)/deg
+291 Phase(Z21)/deg
+292 Phase(Z22)/deg
+293 Phase(Z23)/deg
+294 Phase(Z24)/deg
+295 Phase(Z25)/deg
+296 Phase(Z26)/deg
+297 Phase(Z27)/deg
+298 Phase(Z28)/deg
+299 Phase(Z29)/deg
+300 Phase(Z30)/deg
+301 |Z1|/Ohm
+302 |Z2|/Ohm
+303 |Z3|/Ohm
+304 |Z4|/Ohm
+305 |Z5|/Ohm
+306 |Z6|/Ohm
+307 |Z7|/Ohm
+308 |Z8|/Ohm
+309 |Z9|/Ohm
+310 |Z10|/Ohm
+311 |Z11|/Ohm
+312 |Z12|/Ohm
+313 |Z13|/Ohm
+314 |Z14|/Ohm
+315 |Z15|/Ohm
+316 |Z16|/Ohm
+317 |Z17|/Ohm
+318 |Z18|/Ohm
+319 |Z19|/Ohm
+320 |Z20|/Ohm
+321 |Z21|/Ohm
+322 |Z22|/Ohm
+323 |Z23|/Ohm
+324 |Z24|/Ohm
+325 |Z25|/Ohm
+326 |Z26|/Ohm
+327 |Z27|/Ohm
+328 |Z28|/Ohm
+329 |Z29|/Ohm
+330 |Z30|/Ohm
+331 Re(Z1)/Ohm
+332 Re(Z2)/Ohm
+333 Re(Z3)/Ohm
+334 Re(Z4)/Ohm
+335 Re(Z5)/Ohm
+336 Re(Z6)/Ohm
+337 Re(Z7)/Ohm
+338 Re(Z8)/Ohm
+339 Re(Z9)/Ohm
+340 Re(Z10)/Ohm
+341 Re(Z11)/Ohm
+342 Re(Z12)/Ohm
+343 Re(Z13)/Ohm
+344 Re(Z14)/Ohm
+345 Re(Z15)/Ohm
+346 Re(Z16)/Ohm
+347 Re(Z17)/Ohm
+348 Re(Z18)/Ohm
+349 Re(Z19)/Ohm
+350 Re(Z20)/Ohm
+351 Re(Z21)/Ohm
+352 Re(Z22)/Ohm
+353 Re(Z23)/Ohm
+354 Re(Z24)/Ohm
+355 Re(Z25)/Ohm
+356 Re(Z26)/Ohm
+357 Re(Z27)/Ohm
+358 Re(Z28)/Ohm
+359 Re(Z29)/Ohm
+360 Re(Z30)/Ohm
+361 -Im(Z1)/Ohm
+362 -Im(Z2)/Ohm
+363 -Im(Z3)/Ohm
+364 -Im(Z4)/Ohm
+365 -Im(Z5)/Ohm
+366 -Im(Z6)/Ohm
+367 -Im(Z7)/Ohm
+368 -Im(Z8)/Ohm
+369 -Im(Z9)/Ohm
+370 -Im(Z10)/Ohm
+371 -Im(Z11)/Ohm
+372 -Im(Z12)/Ohm
+373 -Im(Z13)/Ohm
+374 -Im(Z14)/Ohm
+375 -Im(Z15)/Ohm
+376 -Im(Z16)/Ohm
+377 -Im(Z17)/Ohm
+378 -Im(Z18)/Ohm
+379 -Im(Z19)/Ohm
+380 -Im(Z20)/Ohm
+381 -Im(Z21)/Ohm
+382 -Im(Z22)/Ohm
+383 -Im(Z23)/Ohm
+384 -Im(Z24)/Ohm
+385 -Im(Z25)/Ohm
+386 -Im(Z26)/Ohm
+387 -Im(Z27)/Ohm
+388 -Im(Z28)/Ohm
+389 -Im(Z29)/Ohm
+390 -Im(Z30)/Ohm
+391 <E1>/V
+392 <E2>/V
+393 <E3>/V
+394 <E4>/V
+395 <E5>/V
+396 <E6>/V
+397 <E7>/V
+398 <E8>/VBT-Lab and EC-Lab OLE COM User manual
+399 <E9>/V
+400 <E10>/V
+401 <E11>/V
+402 <E12>/V
+403 <E13>/V
+404 <E14>/V
+405 <E15>/V
+406 <E16>/V
+407 <E17>/V
+408 <E18>/V
+409 <E19>/V
+410 <E20>/V
+411 <E21>/V
+412 <E22>/V
+413 <E23>/V
+414 <E24>/V
+415 <E25>/V
+416 <E26>/V
+417 <E27>/V
+418 <E28>/V
+419 <E29>/V
+420 <E30>/V
+421 Phase2/deg
+422 Phase(Zstack)/deg
+423 |Zstack|/Ohm
+424 Re(Zstack)/Ohm
+425 -Im(Zstack)/Ohm
+426 <Estack>/V
+427 <Istack>/mA
+428 Potential/V
+429 Potential/V
+430 Phase(Zwe-ce)/deg
+431 |Zwe-ce|/Ohm
+432 Re(Zwe-ce)/Ohm
+433 -Im(Zwe-ce)/Ohm
+434 (Q-Qo)/C
+435 dQ/C
+436 Ece dc/V
+437 cycle time/s
+438 step time/s
+439 charge time/s
+440 discharge time/s
+441 <Ece>/V
+442 d(Q-Qo)/dE/mA.h/V
+443 Capacity/mA.h
+444 control disk/V
+445 control disk/mA
+446 Edisk/V
+447 Ecedisk=Ecering/V
+448 Idisk/mA
+449 dQdisk/C
+450 (Q-Qo)disk/C
+451 cycle number
+452 control ring/V
+453 Ering/V
+454 Iring/mA
+455 (Q-Qo)ring/C
+456 Pdisk/W
+457 Pring/W
+458 Edisk-Ece/V
+459 Ering-Ece/V
+460 <time>/s
+461 <EweX>/V
+462 Temperature/°C
+463 Ramp upwards
+464 Time/µs
+465 I Range disk
+466 I Range ring
+467 Q charge/discharge/mA.h
+468 half cycle
+469 z cycle
+470 It/mA
+471 <Ece>/V
+472 Vcorr/mm/yr
+473 THD Ewe/%
+474 THD I/%
+475 THD Ece/%
+476 NSD Ewe/%
+477 NSD I/%
+478 NSD Ece/%
+479 NSR Ewe/%
+480 NSR I/%
+481 NSR Ece/%
+482 ShuntIsChanging
+483 ModeIsChanging
+484 NbIterInstr
+485 Instr
+486 |Ewe h2|/V
+487 |Ewe h3|/V
+488 |Ewe h4|/V
+489 |Ewe h5|/V
+490 |Ewe h6|/V
+491 |Ewe h7|/V
+492 |I h2|/A
+493 |I h3|/A
+494 |I h4|/A
+495 |I h5|/A
+496 |I h6|/A
+497 |I h7|/A
+498 |Ece h2|/V
+499 |Ece h3|/V
+500 |Ece h4|/V
+501 |Ece h5|/V
+502 |Ece h6|/V
+503 |Ece h7|/V
+504 Rac/Ohm
+505 Rdc/Ohm
+506 TCU control/°C
+507 TCU meas. /°C
+508 Regulation
+509 Acir/Dcir Control
+510 LTime/s
+511 Re(C)/nF
+512 Im(C)/nF
+513 |C|/nF
+514 Phase(C)/degBT-Lab and EC-Lab OLE COM User manual
+515 Re(M)
+516 Im(M)
+517 |M|
+518 Phase(M)/deg
+519 Re(Permittivity)
+520 Im(Permittivity)
+521 |Permittivity|
+522 Phase(Permittivity)/deg
+523 Re(Conductivity)/mS/cm
+524 Im(Conductivity)/mS/cm
+525 |Conductivity|/mS/cm
+526 Phase(Conductivity)/deg
+527 Re(Resistivity)/Ohm.cm
+528 Im(Resistivity)/Ohm.cm
+529 |Resistivity|/Ohm.cm
+530 Phase(Resistivity)/deg
+531 Tan(Delta)
+532 Loss Angle(Delta)/deg
+533 TCU base /°C
+534 TCU cell /°C
+535 TCU sample/°C
+536 Ewe initial/V
+537 Ewe final/V
+538 I initial/mA
+539 I final/mA
+540 P min/W
+541 P max/W
+542 T min/°C
+543 T max/°C
