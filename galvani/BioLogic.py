@@ -400,7 +400,7 @@ VMPdata_colID_dtype_map = {
     128: ("Delta(|Z|)/%", "<f4"),
     129: ("Delta(Re(Z))/%", "<f4"),
     130: ("Delta(-Im(Z))/%", "<f4"),
-    131: ("Ns", "<f4"),
+    131: ("Ns", "<u2"),
     132: ("dI/dt/mA/s", "<f4"),
     133: ("Delta(mass)/g", "<f4"),
     134: ("Custom01", "<f4"),
