@@ -293,7 +293,11 @@ VMPdata_colID_dtype_map = {
     21: ("control changes", "<f4"),
     22: ("log(|I/A|)", "<f4"),
     23: ("dQ/mA.h", "<f8"),
-    24: ("cycle number", "<u4"),
+    # EC-Lab stores this field as an eight-byte value in MPR data records.
+    # Reading it as <u4> consumes only half of the field; for values such as
+    # 1.0, 2.0, ... the lower four bytes are zero, which makes every cycle
+    # appear to be 0.
+    24: ("cycle number", "<f8"),
     25: ("DQ/mA.h", "<f8"),
     26: ("Rapp/Ohm", "<f4"),
     27: ("Ewe-Ece/V", "<f4"),
