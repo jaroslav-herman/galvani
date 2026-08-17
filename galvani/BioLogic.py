@@ -385,7 +385,8 @@ VMPdata_colID_dtype_map = {
     109: ("|Z21|/Ohm", "<f4"),
     110: ("Re(Z21)/Ohm", "<f4"),
     111: ("-Im(Z21)/Ohm", "<f4"),
-    112: ("C21-2/µF-2", "<f4"),
+    # In EC-Lab PEIS records this column ID is the 8-byte energy-we field.
+    112: ("Energy we/W.h", "<f8"),
     113: ("|Z32|/Ohm", "<f4"),
     114: ("Re(Z32)/Ohm", "<f4"),
     115: ("-Im(Z32)/Ohm", "<f4"),
