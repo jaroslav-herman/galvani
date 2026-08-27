@@ -1,0 +1,45 @@
+name: Publish eisyfit-galvani to PyPI
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/eisyfit-galvani
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Install build tools
+        run: python -m pip install --upgrade build twine
+      - name: Build distributions
+        run: python -m build
+      - name: Check distributions
+        run: python -m twine check dist/*
+      - name: Verify wheel contents
+        shell: bash
+        run: |
+          python - <<'PY'
+          import glob
+          import zipfile
+
+          wheels = glob.glob("dist/eisyfit_galvani-*.whl")
+          assert len(wheels) == 1, wheels
+          with zipfile.ZipFile(wheels[0]) as wheel:
+              names = set(wheel.namelist())
+          assert "galvani/__init__.py" in names
+          assert "galvani/BioLogic.py" in names
+          assert any(name.endswith("GPL-3.0-or-later.txt") for name in names)
+          PY
+      - name: Publish to PyPI
+        run: python -m twine upload dist/*

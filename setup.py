@@ -11,12 +11,12 @@ with open(os.path.join(os.path.dirname(__file__), "README.md")) as f:
     readme = f.read()
 
 setup(
-    name="galvani",
+    name="eisyfit-galvani",
     version="0.5.0",
     description="Open and process battery charger log data files",
     long_description=readme,
     long_description_content_type="text/markdown",
-    url="https://codeberg.org/echemdata/galvani",
+    url="https://github.com/jaroslav-herman/galvani",
     author="Chris Kerr",
     author_email="chris.kerr@mykolab.ch",
     license="GPLv3+",

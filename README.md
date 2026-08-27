@@ -41,6 +41,9 @@ This functionality requires [MDBTools](https://github.com/mdbtools/mdbtools) to 
 
 # Installation
 
+The EIS Fitting maintained fork is published as `eisyfit-galvani`; the Python
+import package remains `galvani`.
+
 The latest galvani releases can be installed from [PyPI](https://pypi.org/project/galvani/) via
 
 ```shell
