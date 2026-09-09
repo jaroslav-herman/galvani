@@ -150,6 +150,29 @@ def test_colID_to_dtype(colIDs, expected):
     assert np.dtype(dtype) == expected_dtype
 
 
+def test_dtype_accepts_trailing_mpr_record_bytes():
+    """Accept undocumented trailing bytes present in some PEIS records."""
+    dtype = np.dtype([("value", "<f4")])
+    record_dtype = BioLogic._dtype_for_record_size(dtype, data_length=16, n_data_points=2)
+
+    assert record_dtype.itemsize == 8
+    records = np.frombuffer(
+        np.array([1.5, 0, 2.5, 0], dtype="<f4").tobytes(),
+        dtype=record_dtype,
+    )
+    assert records["value"].tolist() == [1.5, 2.5]
+
+
+@pytest.mark.parametrize(
+    "data_length, n_data_points",
+    [(15, 2), (4, 2)],
+)
+def test_dtype_rejects_invalid_mpr_record_sizes(data_length, n_data_points):
+    dtype = np.dtype([("value", "<f8")])
+    with pytest.raises(ValueError):
+        BioLogic._dtype_for_record_size(dtype, data_length, n_data_points)
+
+
 @pytest.mark.parametrize(
     "data, expected",
     [

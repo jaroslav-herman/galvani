@@ -913,6 +913,44 @@ def VMPdata_dtype_from_colIDs(colIDs, error_on_unknown_column: bool = True):
     return type_list, flags_dict
 
 
+def _dtype_for_record_size(dtype, data_length, n_data_points):
+    """Return ``dtype`` widened to the actual MPR record size when needed.
+
+    A few EC-Lab PEIS files append undocumented bytes to every data record.
+    NumPy's normal structured dtype has no trailing padding, so its itemsize
+    can be smaller than the on-disk record size even though all declared
+    fields have the correct offsets and types.
+    """
+    if n_data_points <= 0:
+        raise ValueError("MPR data contains no data points")
+    if data_length % n_data_points:
+        raise ValueError("MPR data length is not divisible by its row count")
+
+    record_size = data_length // n_data_points
+    if record_size < dtype.itemsize:
+        raise ValueError(
+            "MPR record is shorter than its declared dtype: "
+            f"{record_size} bytes versus {dtype.itemsize} bytes"
+        )
+    trailing_bytes = record_size - dtype.itemsize
+    if trailing_bytes > 1024:
+        raise ValueError(
+            "MPR record has an unreasonable amount of trailing data: "
+            f"{trailing_bytes} bytes"
+        )
+    if trailing_bytes == 0:
+        return dtype
+
+    return np.dtype(
+        {
+            "names": dtype.names,
+            "formats": [dtype.fields[name][0] for name in dtype.names],
+            "offsets": [dtype.fields[name][1] for name in dtype.names],
+            "itemsize": record_size,
+        }
+    )
+
+
 def read_VMP_modules(fileobj, read_module_data=True):
     """Reads in module headers in the VMPmodule_hdr format. Yields a dict with
     the headers and offset for each module.
@@ -1090,7 +1128,9 @@ class MPRfile:
         maybe_loop_module = [m for m in modules if m["shortname"] == b"VMP loop  "]
         maybe_log_module = [m for m in modules if m["shortname"] == b"VMP LOG   "]
 
-        n_data_points = np.frombuffer(data_module["data"][:4], dtype="<u4")
+        n_data_points = np.frombuffer(
+            data_module["data"][:4], dtype="<u4"
+        ).item()
         n_columns = np.frombuffer(data_module["data"][4:5], dtype="u1").item()
 
         if data_module["version"] == 0:
@@ -1152,7 +1192,9 @@ class MPRfile:
                             dtypes[ind] = (col, perm[unknown_col_ind])
 
                 try:
-                    self.dtype = np.dtype(dtypes)
+                    self.dtype = _dtype_for_record_size(
+                        np.dtype(dtypes), len(main_data), n_data_points
+                    )
                     self.data = np.frombuffer(main_data, dtype=self.dtype)
                     break
                 except ValueError:
@@ -1165,7 +1207,9 @@ class MPRfile:
                 )
 
         else:
-            self.dtype = np.dtype(dtypes)
+            self.dtype = _dtype_for_record_size(
+                np.dtype(dtypes), len(main_data), n_data_points
+            )
             self.data = np.frombuffer(main_data, dtype=self.dtype)
 
         assert self.data.shape[0] == n_data_points
